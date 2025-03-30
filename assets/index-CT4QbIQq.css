@@ -24,71 +24,84 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f0f9ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
 }
 
-.neu-card {
-  background: var(--card-bg);
-  border-radius: 24px;
-  box-shadow: 8px 8px 16px var(--neu-shadow-dark), -8px -8px 16px var(--neu-shadow-light);
+.container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
 }
 
-.neu-button {
-  background: var(--card-bg);
-  border-radius: 12px;
-  box-shadow: 4px 4px 8px var(--neu-shadow-dark), -4px -4px 8px var(--neu-shadow-light);
-  transition: all 0.2s ease;
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-primary);
 }
 
-.neu-button:active {
-  box-shadow: inset 4px 4px 8px var(--neu-shadow-dark), inset -4px -4px 8px var(--neu-shadow-light);
+.search-container {
+  margin: 20px 0;
 }
 
-.glass-morphism {
-  background: var(--card-bg);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+.search-input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
 }
 
-/* Responsive Adjustments */
+.search-icon {
+  width: 50px;
+  height: 50px;
+  margin: 20px auto;
+}
+
+.city-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.city-buttons button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.city-buttons button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Responsive Design */
 @media (max-width: 640px) {
-  /* Mobile Styles */
-  .neu-card {
-    border-radius: 16px;
-    box-shadow: 4px 4px 8px var(--neu-shadow-dark), -4px -4px 8px var(--neu-shadow-light);
+  .search-icon {
+    width: 40px;
+    height: 40px;
   }
-  .neu-button {
-    border-radius: 8px;
+  .search-input {
+    width: 90%;
+  }
+  .city-buttons button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
   }
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
-  /* Tablet Styles */
-  .neu-card {
-    border-radius: 20px;
-    box-shadow: 6px 6px 12px var(--neu-shadow-dark), -6px -6px 12px var(--neu-shadow-light);
+  .search-icon {
+    width: 45px;
+    height: 45px;
   }
-  .neu-button {
-    border-radius: 10px;
-  }
-}
-
-@media (min-width: 1025px) {
-  /* Desktop Styles */
-  .neu-card {
-    border-radius: 24px;
-    box-shadow: 8px 8px 16px var(--neu-shadow-dark), -8px -8px 16px var(--neu-shadow-light);
-  }
-}
-
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  @apply bg-white/5 dark:bg-gray-800/50;
-}
-::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-purple-500 to-pink-500 rounded-full hover:from-purple-600 hover:to-pink-600;
 }
